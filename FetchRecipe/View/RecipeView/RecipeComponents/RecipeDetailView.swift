@@ -12,7 +12,12 @@ import SwiftUI
 struct RecipeDetailView: View {
     let recipe: Recipe
     @State private var showAIModal = false
-    @State private var selectedTab = 0
+    @State private var showShareSheet = false
+    
+    // Create a sharing message that includes recipe details
+    private var sharingText: String {
+        "Check out this amazing \(recipe.name) recipe from \(recipe.cuisine) cuisine!"
+    }
     
     var body: some View {
         ScrollView {
@@ -33,7 +38,21 @@ struct RecipeDetailView: View {
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(20)
                     }
-
+                    
+                    // Video Section
+                    if let youtubeUrl = recipe.youtubeUrl,
+                       let embedUrl = getYouTubeEmbedUrl(youtubeUrl) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Video Tutorial")
+                                .font(.headline)
+                            
+                            YouTubeView(youtubeURL: embedUrl)
+                                .frame(height: 200)
+                                .cornerRadius(12)
+                                .shadow(radius: 2)
+                        }
+                    }
+                    
                     // Quick Actions
                     HStack(spacing: 16) {
                         Button(action: { showAIModal.toggle() }) {
@@ -64,20 +83,22 @@ struct RecipeDetailView: View {
                                 .foregroundColor(.green)
                                 .cornerRadius(12)
                             }
-                        }
-                    }
-                    
-                    // Video Section
-                    if let youtubeUrl = recipe.youtubeUrl,
-                       let embedUrl = getYouTubeEmbedUrl(youtubeUrl) {
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Video Tutorial")
-                                .font(.headline)
                             
-                            YouTubeView(youtubeURL: embedUrl)
-                                .frame(height: 200)
+                            Button(action: {
+                                showShareSheet = true
+                            }) {
+                                VStack(spacing: 4) {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .font(.system(size: 24))
+                                    Text("Share")
+                                        .font(.caption)
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 12)
+                                .background(Color.purple.opacity(0.1))
+                                .foregroundColor(.purple)
                                 .cornerRadius(12)
-                                .shadow(radius: 2)
+                            }
                         }
                     }
                 }
@@ -88,6 +109,11 @@ struct RecipeDetailView: View {
         .sheet(isPresented: $showAIModal) {
             AskAIModalView(recipe: recipe)
         }
+        .sheet(isPresented: $showShareSheet, content: {
+            if let sourceUrl = recipe.sourceUrl {
+                ShareSheet(items: [sourceUrl])
+            }
+        })
     }
     
     func getYouTubeEmbedUrl(_ url: URL) -> URL? {
@@ -96,4 +122,15 @@ struct RecipeDetailView: View {
         }
         return URL(string: "https://www.youtube.com/embed/\(videoID)")
     }
+}
+
+// Add this ShareSheet struct to handle sharing
+struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
