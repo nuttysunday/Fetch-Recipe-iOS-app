@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		153D0A542D5C4F33009520E0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 153D0A532D5C4F33009520E0 /* Lottie */; };
 		153D0A7C2D5C580F009520E0 /* FetchRecipeWatchOS Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 153D0A592D5C580C009520E0 /* FetchRecipeWatchOS Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		153D0AD82D5C6839009520E0 /* app_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 153D0AD72D5C6839009520E0 /* app_logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		153D0A8B2D5C582C009520E0 /* FetchRecipeMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRecipeMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		153D0AA02D5C582E009520E0 /* FetchRecipeMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipeMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		153D0AAA2D5C582E009520E0 /* FetchRecipeMacOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipeMacOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		153D0AD72D5C6839009520E0 /* app_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -206,6 +208,7 @@
 		153D099D2D5BF483009520E0 = {
 			isa = PBXGroup;
 			children = (
+				153D0AD72D5C6839009520E0 /* app_logo.png */,
 				153D09A82D5BF483009520E0 /* FetchRecipe */,
 				153D09BE2D5BF485009520E0 /* FetchRecipeTests */,
 				153D09C82D5BF485009520E0 /* FetchRecipeUITests */,
@@ -513,6 +516,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				153D0AD82D5C6839009520E0 /* app_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,12 +5,15 @@
 //  Created by Shivam Ghodke on 2/11/25.
 //
 
-// Lottie
+
 // Filters
+// Unit testing
+// Caching
+// Documentation
+// Video
+// Share recipe with your friends
 
 import SwiftUI
-import CoreData
-
 
 struct ContentView: View {
     

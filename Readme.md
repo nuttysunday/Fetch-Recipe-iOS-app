@@ -8,6 +8,8 @@
 1. Integrated **Gemini API** to provide contextual information, allowing users to query any recipe-related information.
 2. App is hosted on the **App Store**.
 3. Developed the app for **iOS**, **iPadOS**, **watchOS**, and **MacOS** platforms.
+4. Share recipe with your friends.
+5. Implemented a fuzzy serach for searching the recipe.
 
 ### Future Plan:
 1. Store the query data in a **chat format**.
