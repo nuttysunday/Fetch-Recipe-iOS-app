@@ -25,7 +25,7 @@ struct RecipeDetailView: View {
                 // Content Section
                 VStack(spacing: 24) {
                     // Header Info
-                    VStack(spacing: 8) {
+                    HStack(spacing: 16) {
                         Text(recipe.name)
                             .font(.title)
                             .fontWeight(.bold)
@@ -37,15 +37,13 @@ struct RecipeDetailView: View {
                             .padding(.vertical, 6)
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(20)
+                            .bold()
                     }
                     
                     // Video Section
                     if let youtubeUrl = recipe.youtubeUrl,
                        let embedUrl = getYouTubeEmbedUrl(youtubeUrl) {
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Video Tutorial")
-                                .font(.headline)
-                            
                             YouTubeView(youtubeURL: embedUrl)
                                 .frame(height: 200)
                                 .cornerRadius(12)

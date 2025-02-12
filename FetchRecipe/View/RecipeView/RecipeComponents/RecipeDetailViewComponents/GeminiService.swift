@@ -7,9 +7,9 @@
 
 import Foundation
 
-// Define a struct for the request payload
 struct GeminiRequest: Codable {
     let contents: [Content]
+    let generationConfig: GenerationConfig
     
     struct Content: Codable {
         let parts: [Text]
@@ -18,9 +18,15 @@ struct GeminiRequest: Codable {
             let text: String
         }
     }
+    
+    struct GenerationConfig: Codable {
+        let temperature: Float
+        let topK: Int
+        let topP: Float
+        let maxOutputTokens: Int
+    }
 }
 
-// Define a struct for the response
 struct GeminiResponse: Codable {
     let candidates: [Candidate]
     
@@ -40,7 +46,6 @@ struct GeminiResponse: Codable {
 class GeminiService {
     private var apiKey: String?
     
-    // Function to fetch the API key
     private func fetchAPIKey() {
         if let apiKey = Bundle.main.object(forInfoDictionaryKey: "Gemini_api_key") as? String {
             self.apiKey = apiKey
@@ -49,61 +54,98 @@ class GeminiService {
         }
     }
     
-    // Function to generate AI response, now accepts both user question and recipe
     func generateAIResponse(userQuestion: String, recipe: Recipe) async throws -> String {
-        // Fetch the API key (call the function to set it)
         fetchAPIKey()
         
-        // Ensure the API key is available
         guard let apiKey = self.apiKey else {
             throw NSError(domain: "GeminiService", code: 1, userInfo: [NSLocalizedDescriptionKey: "API key is missing."])
         }
 
-        // Build the API endpoint URL
         let url = URL(string: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=\(apiKey)")!
         
-        // Prepare the request payload, including the recipe details and user question
-        let requestPayload = GeminiRequest(contents: [
-            GeminiRequest.Content(parts: [
-                GeminiRequest.Content.Text(text: userQuestion),
-                GeminiRequest.Content.Text(text: recipeDescription(recipe)) // Pass the formatted recipe description
-            ])
-        ])
+        let requestPayload = GeminiRequest(
+            contents: [
+                GeminiRequest.Content(parts: [
+                    GeminiRequest.Content.Text(text: userQuestion),
+                    GeminiRequest.Content.Text(text: recipeDescription(recipe))
+                ])
+            ],
+            generationConfig: GeminiRequest.GenerationConfig(
+                temperature: 0.7,
+                topK: 40,
+                topP: 0.8,
+                maxOutputTokens: 150
+            )
+        )
         
-        // Encode the request payload to JSON
         let jsonData = try JSONEncoder().encode(requestPayload)
         
-        // Create the URLRequest
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("text/plain", forHTTPHeaderField: "Accept")
         request.httpBody = jsonData
         
-        // Perform the network request
         let (data, _) = try await URLSession.shared.data(for: request)
-        
-        // Decode the response data into GeminiResponse
         let response = try JSONDecoder().decode(GeminiResponse.self, from: data)
         
-        // Extract the AI's response from the candidates and return it
-        return response.candidates.first?.content.parts.first?.text ?? "No response found."
+        guard let rawResponse = response.candidates.first?.content.parts.first?.text else {
+            return "No response found."
+        }
+        
+        return cleanResponse(rawResponse)
     }
 
-    // Helper function to create a description from the recipe (including name, cuisine, source, and youtube URLs)
     private func recipeDescription(_ recipe: Recipe) -> String {
-        var description = "The question before this is related to Recipe Name: \(recipe.name), Cuisine: \(recipe.cuisine)"
+        """
+        Context: This is about Recipe: \(recipe.name) (\(recipe.cuisine) cuisine).
         
-        description += "Please answer in plain text and in 150 words or less."
-        /*
-        if let sourceUrl = recipe.sourceUrl {
-            description += ", Source URL: \(sourceUrl.absoluteString)"
-        }
+        Instructions for response:
+        1. Respond in simple plain text only
+        2. Do not use any formatting or special characters
+        3. Keep response under 150 words
+        4. Use natural, conversational language
+        5. Avoid bullet points, numbering, or any markdown
+        6. Focus on direct, clear answers
+        7. If listing items, use commas and natural language
         
-        if let youtubeUrl = recipe.youtubeUrl {
-            description += ", YouTube URL: \(youtubeUrl.absoluteString)"
-        }
-        */
-        return description
+        Question:
+        """
+    }
+    
+    private func cleanResponse(_ response: String) -> String {
+        var cleaned = response
+            .replacingOccurrences(of: "•", with: "")
+            .replacingOccurrences(of: "*", with: "")
+            .replacingOccurrences(of: "#", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .replacingOccurrences(of: "`", with: "")
+            .replacingOccurrences(of: "_", with: "")
+            
+        // Remove any markdown-style links
+        cleaned = cleaned.replacingOccurrences(
+            of: "\\[([^\\]]+)\\]\\([^)]+\\)",
+            with: "$1",
+            options: .regularExpression
+        )
+        
+        // Remove multiple newlines
+        cleaned = cleaned.replacingOccurrences(
+            of: "\n+",
+            with: "\n",
+            options: .regularExpression
+        )
+        
+        // Remove any remaining markdown or special formatting
+        cleaned = cleaned.replacingOccurrences(
+            of: "[\\[\\]\\|\\>]",
+            with: "",
+            options: .regularExpression
+        )
+        
+        // Trim extra whitespace
+        cleaned = cleaned.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        return cleaned
     }
 }
