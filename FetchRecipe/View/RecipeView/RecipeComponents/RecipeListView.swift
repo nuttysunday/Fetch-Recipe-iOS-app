@@ -14,7 +14,6 @@ struct RecipeListView: View {
     let recipes: [Recipe]
 
     var body: some View {
-        VStack { 
             List(recipes) { recipe in
                 NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                     HStack {
@@ -24,6 +23,7 @@ struct RecipeListView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 80, height: 80)
+                                    .cornerRadius(12)
                                     .clipped()
                             } else if phase.error != nil {
                                 Image(systemName: "photo")
@@ -44,7 +44,6 @@ struct RecipeListView: View {
                     }
                 }
             }
-            .navigationTitle("Recipes")
-        }
+            .listStyle(PlainListStyle())
     }
 }

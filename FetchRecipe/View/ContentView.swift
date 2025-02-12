@@ -8,10 +8,10 @@
 
 // Unit testing
 // Caching
+
+// Deploy on app store
 // Documentation
 // Video
-// Share recipe with your friends
-// Theme switcher
 
 import SwiftUI
 

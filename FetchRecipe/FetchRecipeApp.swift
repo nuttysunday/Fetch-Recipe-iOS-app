@@ -15,6 +15,7 @@ struct FetchRecipeApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .preferredColorScheme(.light) // Forces light mode
         }
     }
 }

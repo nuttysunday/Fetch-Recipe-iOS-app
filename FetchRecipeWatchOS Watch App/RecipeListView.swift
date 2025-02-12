@@ -43,8 +43,9 @@ struct RecipeListView: View {
                         }
                     }
                 }
+                .listRowBackground(Color.white)
             }
-            .navigationTitle("Recipes")
+            .background(Color.white)
         }
     }
 }

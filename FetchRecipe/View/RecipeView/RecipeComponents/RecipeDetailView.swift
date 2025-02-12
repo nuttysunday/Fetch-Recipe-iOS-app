@@ -109,7 +109,7 @@ struct RecipeDetailView: View {
         }
         .sheet(isPresented: $showShareSheet, content: {
             if let sourceUrl = recipe.sourceUrl {
-                ShareSheet(items: [sourceUrl])
+                ShareSheet(items: [sharingText, sourceUrl])
             }
         })
     }
@@ -118,7 +118,8 @@ struct RecipeDetailView: View {
         guard let videoID = url.absoluteString.components(separatedBy: "v=").last?.components(separatedBy: "&").first else {
             return nil
         }
-        return URL(string: "https://www.youtube.com/embed/\(videoID)")
+        let embedUrlString = "https://www.youtube.com/embed/\(videoID)"
+        return URL(string: embedUrlString)
     }
 }
 

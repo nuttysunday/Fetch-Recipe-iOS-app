@@ -138,10 +138,30 @@ struct RecipeMainView: View {
                             .playing(loopMode: .loop)
                     } else {
                         RecipeListView(recipes: filteredRecipes)
+                            //.border(.red)
                     }
                 }
             }
-            .navigationTitle("Recipes")
+           
+            .navigationBarTitle("")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        if let url = URL(string: "https://apps.apple.com/app/id6740636646?action=write-review") {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    })  {
+                        Image(systemName: "star.fill") // Example icon for the button
+                    }
+                }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Recipes")
+                        .bold()
+                        .font(.title)
+                }
+            }
+            //.border(.red)
             .task {
                 await viewModel.fetchRecipes()
             }
