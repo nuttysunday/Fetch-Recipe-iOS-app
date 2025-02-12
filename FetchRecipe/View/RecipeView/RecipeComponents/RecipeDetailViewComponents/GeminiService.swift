@@ -77,6 +77,7 @@ class GeminiService {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("text/plain", forHTTPHeaderField: "Accept")
         request.httpBody = jsonData
         
         // Perform the network request
@@ -92,6 +93,8 @@ class GeminiService {
     // Helper function to create a description from the recipe (including name, cuisine, source, and youtube URLs)
     private func recipeDescription(_ recipe: Recipe) -> String {
         var description = "The question before this is related to Recipe Name: \(recipe.name), Cuisine: \(recipe.cuisine)"
+        
+        description += "Please answer in plain text and in 150 words or less."
         /*
         if let sourceUrl = recipe.sourceUrl {
             description += ", Source URL: \(sourceUrl.absoluteString)"

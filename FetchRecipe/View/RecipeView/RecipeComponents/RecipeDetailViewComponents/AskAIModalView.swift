@@ -23,24 +23,28 @@ struct AskAIModalView: View {
 
             // Show the TextField and Send button only if the question hasn't been sent
             if !isQuestionSent {
-                TextField("Type your question here...", text: $userQuestion)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(height: 40)
-                
-                Button("Send") {
-                    // Call a function to handle the AI request here
-                    isLoading = true
-                    Task {
-                        await askAI(question: userQuestion, recipe: recipe)  // Pass recipe to askAI function
-                    }
-                    isQuestionSent = true // Hide the TextField and Send button after sending
+                HStack{
+
+                    TextField("Type your question here...", text: $userQuestion )
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                    Button(action: {
+                            // Call a function to handle the AI request here
+                            isLoading = true
+                            Task {
+                                await askAI(question: userQuestion, recipe: recipe)  // Pass recipe to askAI function
+                            }
+                            isQuestionSent = true
+                        }) {
+                            Image(systemName: "arrow.right.circle.fill") 
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 30)
+                                .foregroundColor(userQuestion.isEmpty ? .gray : .blue)
+                        }
+                        .disabled(userQuestion.isEmpty)
                 }
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(8)
-                .disabled(userQuestion.isEmpty)
+                .frame(height : 50)
             }
             
             // Show loading indicator while waiting for the response
@@ -51,19 +55,9 @@ struct AskAIModalView: View {
 
             // Display AI response (if any)
             if !aiResponse.isEmpty {
-                Text("AI Response: \(aiResponse)")
+                Text(aiResponse)
                     .padding()
-                    .foregroundColor(.green)
             }
-
-            // Close button
-            Button("Close") {
-                dismiss()
-            }
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
-            .cornerRadius(8)
         }
         .padding()
     }

@@ -47,11 +47,16 @@ struct RecipeDetailView: View {
 
                 Divider()
                 
-                // Ask AI Button
                 Button(action: {
                     showAIModal.toggle()
                 }) {
-                    Text("Ask AI")
+                    Text("Ask Gemini")
+                        .padding(12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color.blue, lineWidth: 2)
+                        )
+                        .cornerRadius(12)
                 }
             }
             .padding()
