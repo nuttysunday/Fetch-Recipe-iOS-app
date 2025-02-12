@@ -1,7 +1,7 @@
 # Fetch Recipe App (Take Home Assignment)
 
 ### Tech Stack:
-- **Frontend**: SwiftUI, Lottie (Graphic Animation), Canva (Logo)
+- **Frontend**: SwiftUI, Lottie (Graphic Animation), Adobe (Logo)
 - **Backend**: Swift, Gemini API
 
 ### Unique Features:
@@ -16,3 +16,4 @@
 2. Added Handoff between different devices present in Apple ecosystem.
 3. Create an internal framework for the shared codebase for different platforms.
 4. Optimize UI for each platform.
+5. Setup a Xcloud CI/CD pipeline to automatically deploy app in Test Flight after code pushed to main branch for beta testing.

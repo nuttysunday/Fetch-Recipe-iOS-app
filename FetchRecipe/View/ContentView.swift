@@ -6,12 +6,12 @@
 //
 
 
-// Filters
 // Unit testing
 // Caching
 // Documentation
 // Video
 // Share recipe with your friends
+// Theme switcher
 
 import SwiftUI
 

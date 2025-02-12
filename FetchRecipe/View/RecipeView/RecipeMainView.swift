@@ -62,7 +62,7 @@ struct RecipeMainView: View {
                 
                 VStack {
                     // Search Bar, Sort, and Cuisine Filter in Horizontal Stack
-                    HStack() {
+                    HStack(spacing: 10) {
                         // Dropdown Menu for Sorting
                         Menu {
                             ForEach(RecipeSortOption.allCases, id: \.self) { option in
@@ -75,9 +75,11 @@ struct RecipeMainView: View {
                                 Text(selectedSortOption.rawValue)
                                 Image(systemName: "chevron.down")
                             }
+                            .frame(maxWidth: .infinity) // Move here
                             .padding(10)
                             .background(Color(.systemGray6))
                             .cornerRadius(8)
+                            .bold()
                         }
 
                         // Button to open Cuisine Multi-Select Filter
@@ -86,12 +88,14 @@ struct RecipeMainView: View {
                                 Text(selectedCuisines.isEmpty ? "All Cuisines" : "\(selectedCuisines.count) Selected")
                                 Image(systemName: "line.3.horizontal.decrease.circle")
                             }
+                            .frame(maxWidth: .infinity) // Move here
                             .padding(10)
                             .background(Color(.systemGray6))
                             .cornerRadius(8)
+                            .bold()
                         }
                     }
-                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity, maxHeight: 50)
 
                     // Search Bar
                     TextField("Search recipes...", text: $searchText)
