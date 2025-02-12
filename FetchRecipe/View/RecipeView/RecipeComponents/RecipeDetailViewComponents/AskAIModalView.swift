@@ -7,6 +7,7 @@
 
 
 import SwiftUI
+import Lottie
 
 struct AskAIModalView: View {
     let recipe: Recipe  // Accept recipe as a parameter
@@ -49,8 +50,8 @@ struct AskAIModalView: View {
             
             // Show loading indicator while waiting for the response
             if isLoading {
-                ProgressView("Asking AI...")
-                    .progressViewStyle(CircularProgressViewStyle())
+                LottieView(animation: .named("Animation"))
+                    .playing(loopMode: .loop)
             }
 
             // Display AI response (if any)
