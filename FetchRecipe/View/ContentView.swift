@@ -8,20 +8,20 @@
 
 // Unit testing
 // Caching
+// Documentation
+// Readme
+// Video
 
 // Deploy on app store
-// Documentation
-// Video
 
 import SwiftUI
 
+
 struct ContentView: View {
-    
     var body: some View {
         RecipeMainView()
     }
 }
-
 
 
 #Preview {
