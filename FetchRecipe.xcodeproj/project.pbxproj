@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		153D0A542D5C4F33009520E0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 153D0A532D5C4F33009520E0 /* Lottie */; };
+		153D0A7C2D5C580F009520E0 /* FetchRecipeWatchOS Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 153D0A592D5C580C009520E0 /* FetchRecipeWatchOS Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,12 +26,67 @@
 			remoteGlobalIDString = 153D09A52D5BF483009520E0;
 			remoteInfo = FetchRecipe;
 		};
+		153D0A692D5C580F009520E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 153D099E2D5BF483009520E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 153D0A582D5C580C009520E0;
+			remoteInfo = "FetchRecipeWatchOS Watch App";
+		};
+		153D0A732D5C580F009520E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 153D099E2D5BF483009520E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 153D0A582D5C580C009520E0;
+			remoteInfo = "FetchRecipeWatchOS Watch App";
+		};
+		153D0A7A2D5C580F009520E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 153D099E2D5BF483009520E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 153D0A582D5C580C009520E0;
+			remoteInfo = "FetchRecipeWatchOS Watch App";
+		};
+		153D0AA12D5C582E009520E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 153D099E2D5BF483009520E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 153D0A8A2D5C582C009520E0;
+			remoteInfo = FetchRecipeMacOS;
+		};
+		153D0AAB2D5C582E009520E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 153D099E2D5BF483009520E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 153D0A8A2D5C582C009520E0;
+			remoteInfo = FetchRecipeMacOS;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		153D0A802D5C580F009520E0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				153D0A7C2D5C580F009520E0 /* FetchRecipeWatchOS Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		153D09A62D5BF483009520E0 /* FetchRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		153D09BB2D5BF485009520E0 /* FetchRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		153D09C52D5BF485009520E0 /* FetchRecipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		153D0A592D5C580C009520E0 /* FetchRecipeWatchOS Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FetchRecipeWatchOS Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		153D0A682D5C580E009520E0 /* FetchRecipeWatchOS Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FetchRecipeWatchOS Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		153D0A722D5C580F009520E0 /* FetchRecipeWatchOS Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FetchRecipeWatchOS Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		153D0A8B2D5C582C009520E0 /* FetchRecipeMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRecipeMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		153D0AA02D5C582E009520E0 /* FetchRecipeMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipeMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		153D0AAA2D5C582E009520E0 /* FetchRecipeMacOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipeMacOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -62,6 +118,21 @@
 			path = FetchRecipeUITests;
 			sourceTree = "<group>";
 		};
+		153D0A5A2D5C580C009520E0 /* FetchRecipeWatchOS Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "FetchRecipeWatchOS Watch App";
+			sourceTree = "<group>";
+		};
+		153D0A6B2D5C580F009520E0 /* FetchRecipeWatchOS Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "FetchRecipeWatchOS Watch AppTests";
+			sourceTree = "<group>";
+		};
+		153D0A752D5C580F009520E0 /* FetchRecipeWatchOS Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "FetchRecipeWatchOS Watch AppUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +158,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		153D0A562D5C580C009520E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A652D5C580E009520E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A6F2D5C580F009520E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A882D5C582C009520E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A9D2D5C582E009520E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0AA72D5C582E009520E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,6 +209,9 @@
 				153D09A82D5BF483009520E0 /* FetchRecipe */,
 				153D09BE2D5BF485009520E0 /* FetchRecipeTests */,
 				153D09C82D5BF485009520E0 /* FetchRecipeUITests */,
+				153D0A5A2D5C580C009520E0 /* FetchRecipeWatchOS Watch App */,
+				153D0A6B2D5C580F009520E0 /* FetchRecipeWatchOS Watch AppTests */,
+				153D0A752D5C580F009520E0 /* FetchRecipeWatchOS Watch AppUITests */,
 				153D09A72D5BF483009520E0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +222,12 @@
 				153D09A62D5BF483009520E0 /* FetchRecipe.app */,
 				153D09BB2D5BF485009520E0 /* FetchRecipeTests.xctest */,
 				153D09C52D5BF485009520E0 /* FetchRecipeUITests.xctest */,
+				153D0A592D5C580C009520E0 /* FetchRecipeWatchOS Watch App.app */,
+				153D0A682D5C580E009520E0 /* FetchRecipeWatchOS Watch AppTests.xctest */,
+				153D0A722D5C580F009520E0 /* FetchRecipeWatchOS Watch AppUITests.xctest */,
+				153D0A8B2D5C582C009520E0 /* FetchRecipeMacOS.app */,
+				153D0AA02D5C582E009520E0 /* FetchRecipeMacOSTests.xctest */,
+				153D0AAA2D5C582E009520E0 /* FetchRecipeMacOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,10 +242,12 @@
 				153D09A22D5BF483009520E0 /* Sources */,
 				153D09A32D5BF483009520E0 /* Frameworks */,
 				153D09A42D5BF483009520E0 /* Resources */,
+				153D0A802D5C580F009520E0 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				153D0A7B2D5C580F009520E0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				153D09A82D5BF483009520E0 /* FetchRecipe */,
@@ -182,6 +306,133 @@
 			productReference = 153D09C52D5BF485009520E0 /* FetchRecipeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		153D0A582D5C580C009520E0 /* FetchRecipeWatchOS Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 153D0A7D2D5C580F009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeWatchOS Watch App" */;
+			buildPhases = (
+				153D0A552D5C580C009520E0 /* Sources */,
+				153D0A562D5C580C009520E0 /* Frameworks */,
+				153D0A572D5C580C009520E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				153D0A5A2D5C580C009520E0 /* FetchRecipeWatchOS Watch App */,
+			);
+			name = "FetchRecipeWatchOS Watch App";
+			packageProductDependencies = (
+			);
+			productName = "FetchRecipeWatchOS Watch App";
+			productReference = 153D0A592D5C580C009520E0 /* FetchRecipeWatchOS Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		153D0A672D5C580E009520E0 /* FetchRecipeWatchOS Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 153D0A812D5C580F009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeWatchOS Watch AppTests" */;
+			buildPhases = (
+				153D0A642D5C580E009520E0 /* Sources */,
+				153D0A652D5C580E009520E0 /* Frameworks */,
+				153D0A662D5C580E009520E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				153D0A6A2D5C580F009520E0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				153D0A6B2D5C580F009520E0 /* FetchRecipeWatchOS Watch AppTests */,
+			);
+			name = "FetchRecipeWatchOS Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "FetchRecipeWatchOS Watch AppTests";
+			productReference = 153D0A682D5C580E009520E0 /* FetchRecipeWatchOS Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		153D0A712D5C580F009520E0 /* FetchRecipeWatchOS Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 153D0A842D5C580F009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeWatchOS Watch AppUITests" */;
+			buildPhases = (
+				153D0A6E2D5C580F009520E0 /* Sources */,
+				153D0A6F2D5C580F009520E0 /* Frameworks */,
+				153D0A702D5C580F009520E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				153D0A742D5C580F009520E0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				153D0A752D5C580F009520E0 /* FetchRecipeWatchOS Watch AppUITests */,
+			);
+			name = "FetchRecipeWatchOS Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "FetchRecipeWatchOS Watch AppUITests";
+			productReference = 153D0A722D5C580F009520E0 /* FetchRecipeWatchOS Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		153D0A8A2D5C582C009520E0 /* FetchRecipeMacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 153D0AB22D5C582E009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeMacOS" */;
+			buildPhases = (
+				153D0A872D5C582C009520E0 /* Sources */,
+				153D0A882D5C582C009520E0 /* Frameworks */,
+				153D0A892D5C582C009520E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FetchRecipeMacOS;
+			packageProductDependencies = (
+			);
+			productName = FetchRecipeMacOS;
+			productReference = 153D0A8B2D5C582C009520E0 /* FetchRecipeMacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		153D0A9F2D5C582E009520E0 /* FetchRecipeMacOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 153D0AB52D5C582E009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeMacOSTests" */;
+			buildPhases = (
+				153D0A9C2D5C582E009520E0 /* Sources */,
+				153D0A9D2D5C582E009520E0 /* Frameworks */,
+				153D0A9E2D5C582E009520E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				153D0AA22D5C582E009520E0 /* PBXTargetDependency */,
+			);
+			name = FetchRecipeMacOSTests;
+			packageProductDependencies = (
+			);
+			productName = FetchRecipeMacOSTests;
+			productReference = 153D0AA02D5C582E009520E0 /* FetchRecipeMacOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		153D0AA92D5C582E009520E0 /* FetchRecipeMacOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 153D0AB82D5C582E009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeMacOSUITests" */;
+			buildPhases = (
+				153D0AA62D5C582E009520E0 /* Sources */,
+				153D0AA72D5C582E009520E0 /* Frameworks */,
+				153D0AA82D5C582E009520E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				153D0AAC2D5C582E009520E0 /* PBXTargetDependency */,
+			);
+			name = FetchRecipeMacOSUITests;
+			packageProductDependencies = (
+			);
+			productName = FetchRecipeMacOSUITests;
+			productReference = 153D0AAA2D5C582E009520E0 /* FetchRecipeMacOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,6 +453,28 @@
 					153D09C42D5BF485009520E0 = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 153D09A52D5BF483009520E0;
+					};
+					153D0A582D5C580C009520E0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					153D0A672D5C580E009520E0 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 153D0A582D5C580C009520E0;
+					};
+					153D0A712D5C580F009520E0 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 153D0A582D5C580C009520E0;
+					};
+					153D0A8A2D5C582C009520E0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					153D0A9F2D5C582E009520E0 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 153D0A8A2D5C582C009520E0;
+					};
+					153D0AA92D5C582E009520E0 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 153D0A8A2D5C582C009520E0;
 					};
 				};
 			};
@@ -225,6 +498,12 @@
 				153D09A52D5BF483009520E0 /* FetchRecipe */,
 				153D09BA2D5BF485009520E0 /* FetchRecipeTests */,
 				153D09C42D5BF485009520E0 /* FetchRecipeUITests */,
+				153D0A582D5C580C009520E0 /* FetchRecipeWatchOS Watch App */,
+				153D0A672D5C580E009520E0 /* FetchRecipeWatchOS Watch AppTests */,
+				153D0A712D5C580F009520E0 /* FetchRecipeWatchOS Watch AppUITests */,
+				153D0A8A2D5C582C009520E0 /* FetchRecipeMacOS */,
+				153D0A9F2D5C582E009520E0 /* FetchRecipeMacOSTests */,
+				153D0AA92D5C582E009520E0 /* FetchRecipeMacOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +524,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		153D09C32D5BF485009520E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A572D5C580C009520E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A662D5C580E009520E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A702D5C580F009520E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A892D5C582C009520E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A9E2D5C582E009520E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0AA82D5C582E009520E0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -275,6 +596,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		153D0A552D5C580C009520E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A642D5C580E009520E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A6E2D5C580F009520E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A872D5C582C009520E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0A9C2D5C582E009520E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		153D0AA62D5C582E009520E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -287,6 +650,31 @@
 			isa = PBXTargetDependency;
 			target = 153D09A52D5BF483009520E0 /* FetchRecipe */;
 			targetProxy = 153D09C62D5BF485009520E0 /* PBXContainerItemProxy */;
+		};
+		153D0A6A2D5C580F009520E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 153D0A582D5C580C009520E0 /* FetchRecipeWatchOS Watch App */;
+			targetProxy = 153D0A692D5C580F009520E0 /* PBXContainerItemProxy */;
+		};
+		153D0A742D5C580F009520E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 153D0A582D5C580C009520E0 /* FetchRecipeWatchOS Watch App */;
+			targetProxy = 153D0A732D5C580F009520E0 /* PBXContainerItemProxy */;
+		};
+		153D0A7B2D5C580F009520E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 153D0A582D5C580C009520E0 /* FetchRecipeWatchOS Watch App */;
+			targetProxy = 153D0A7A2D5C580F009520E0 /* PBXContainerItemProxy */;
+		};
+		153D0AA22D5C582E009520E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 153D0A8A2D5C582C009520E0 /* FetchRecipeMacOS */;
+			targetProxy = 153D0AA12D5C582E009520E0 /* PBXContainerItemProxy */;
+		};
+		153D0AAC2D5C582E009520E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 153D0A8A2D5C582C009520E0 /* FetchRecipeMacOS */;
+			targetProxy = 153D0AAB2D5C582E009520E0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -542,6 +930,276 @@
 			};
 			name = Release;
 		};
+		153D0A7E2D5C580F009520E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FetchRecipeWatchOS Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FetchRecipeWatchOS;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = shivam.FetchRecipe;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivam.FetchRecipe.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		153D0A7F2D5C580F009520E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FetchRecipeWatchOS Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FetchRecipeWatchOS;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = shivam.FetchRecipe;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivam.FetchRecipe.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		153D0A822D5C580F009520E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "shivam.FetchRecipeWatchOS-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchRecipeWatchOS Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FetchRecipeWatchOS Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		153D0A832D5C580F009520E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "shivam.FetchRecipeWatchOS-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchRecipeWatchOS Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FetchRecipeWatchOS Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		153D0A852D5C580F009520E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "shivam.FetchRecipeWatchOS-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "FetchRecipeWatchOS Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		153D0A862D5C580F009520E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "shivam.FetchRecipeWatchOS-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "FetchRecipeWatchOS Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		153D0AB32D5C582E009520E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FetchRecipeMacOS/FetchRecipeMacOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FetchRecipeMacOS/Preview Content\"";
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivam.FetchRecipeMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		153D0AB42D5C582E009520E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FetchRecipeMacOS/FetchRecipeMacOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FetchRecipeMacOS/Preview Content\"";
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivam.FetchRecipeMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		153D0AB62D5C582E009520E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivam.FetchRecipeMacOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchRecipeMacOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FetchRecipeMacOS";
+			};
+			name = Debug;
+		};
+		153D0AB72D5C582E009520E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivam.FetchRecipeMacOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchRecipeMacOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FetchRecipeMacOS";
+			};
+			name = Release;
+		};
+		153D0AB92D5C582E009520E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivam.FetchRecipeMacOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FetchRecipeMacOS;
+			};
+			name = Debug;
+		};
+		153D0ABA2D5C582E009520E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQ4W78279B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivam.FetchRecipeMacOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FetchRecipeMacOS;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -577,6 +1235,60 @@
 			buildConfigurations = (
 				153D09D62D5BF485009520E0 /* Debug */,
 				153D09D72D5BF485009520E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		153D0A7D2D5C580F009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeWatchOS Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				153D0A7E2D5C580F009520E0 /* Debug */,
+				153D0A7F2D5C580F009520E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		153D0A812D5C580F009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeWatchOS Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				153D0A822D5C580F009520E0 /* Debug */,
+				153D0A832D5C580F009520E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		153D0A842D5C580F009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeWatchOS Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				153D0A852D5C580F009520E0 /* Debug */,
+				153D0A862D5C580F009520E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		153D0AB22D5C582E009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				153D0AB32D5C582E009520E0 /* Debug */,
+				153D0AB42D5C582E009520E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		153D0AB52D5C582E009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeMacOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				153D0AB62D5C582E009520E0 /* Debug */,
+				153D0AB72D5C582E009520E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		153D0AB82D5C582E009520E0 /* Build configuration list for PBXNativeTarget "FetchRecipeMacOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				153D0AB92D5C582E009520E0 /* Debug */,
+				153D0ABA2D5C582E009520E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
