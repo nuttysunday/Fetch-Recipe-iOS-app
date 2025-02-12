@@ -12,6 +12,8 @@ import SwiftUI
 struct RecipeDetailView: View {
     let recipe: Recipe
     
+    @State private var showAIModal = false  // Controls the visibility of the modal
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
@@ -44,38 +46,20 @@ struct RecipeDetailView: View {
                     .foregroundColor(.secondary)
 
                 Divider()
-
-                // Source URL (if available)
-                if let sourceUrl = recipe.sourceUrl {
-                    Link("View Full Recipe", destination: sourceUrl)
-                        .font(.headline)
-                        .foregroundColor(.blue)
+                
+                // Ask AI Button
+                Button(action: {
+                    showAIModal.toggle()
+                }) {
+                    Text("Ask AI")
                 }
-
-                // YouTube Video Embed (if available)
-                if let youtubeUrl = recipe.youtubeUrl, let embedUrl = getYouTubeEmbedUrl(youtubeUrl) {
-                    YouTubeView(youtubeURL: embedUrl)
-                        .frame(width: 250, height: 150)
-                        .cornerRadius(12)
-                    
-                    Link("Watch on YouTube", destination: youtubeUrl)
-                        .font(.headline)
-                        .foregroundColor(.red)
-                }
-
-                Spacer()
             }
             .padding()
         }
         .navigationTitle("Recipe Details")
         .navigationBarTitleDisplayMode(.inline)
-    }
-
-    /// Converts a YouTube URL to an embeddable URL
-    func getYouTubeEmbedUrl(_ url: URL) -> URL? {
-        guard let videoID = url.absoluteString.components(separatedBy: "v=").last?.components(separatedBy: "&").first else {
-            return nil
+        .sheet(isPresented: $showAIModal) {
+            AskAIModalView(recipe: recipe)
         }
-        return URL(string: "https://www.youtube.com/embed/\(videoID)")
     }
 }
