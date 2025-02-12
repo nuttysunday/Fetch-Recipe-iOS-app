@@ -151,7 +151,7 @@ struct RecipeMainView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        if let url = URL(string: "https://apps.apple.com/app/id6740636646?action=write-review") {
+                        if let url = URL(string: "https://apps.apple.com/app/id6741867800?action=write-review") {
                             UIApplication.shared.open(url, options: [:], completionHandler: nil)
                         }
                     })  {
@@ -176,7 +176,7 @@ struct RecipeMainView: View {
 
             }
             .sheet(isPresented: $showShareSheet) {
-                        ShareSheet(items: ["Check out this awesome app!", URL(string: "https://apps.apple.com/app/id6740636646")!])
+                        ShareSheet(items: ["Check out this awesome app!", URL(string: "https://apps.apple.com/app/id6741867800")!])
                     }
             //.border(.red)
             .task {

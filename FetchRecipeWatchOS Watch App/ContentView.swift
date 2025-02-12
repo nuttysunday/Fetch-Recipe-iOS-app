@@ -12,10 +12,13 @@ struct ContentView: View {
     
     var body: some View {
         RecipeMainView()
+        
     }
 }
 
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.light)
 }
+

@@ -25,6 +25,7 @@ struct RecipeListView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 80, height: 80)
                                     .clipped()
+                                    .cornerRadius(12)
                             } else if phase.error != nil {
                                 Image(systemName: "photo")
                                     .frame(width: 80, height: 80)
@@ -37,15 +38,14 @@ struct RecipeListView: View {
                         VStack(alignment: .leading) {
                             Text(recipe.name)
                                 .font(.headline)
+                                .foregroundColor(.white)
                             Text(recipe.cuisine)
                                 .font(.subheadline)
-                                .foregroundColor(.secondary)
+                                .foregroundColor(.white)
                         }
                     }
                 }
-                .listRowBackground(Color.white)
             }
-            .background(Color.white)
         }
     }
 }

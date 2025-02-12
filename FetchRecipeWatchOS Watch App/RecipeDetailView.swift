@@ -58,21 +58,6 @@ struct RecipeDetailView: View {
                         .foregroundColor(.blue)
                 }
                 
-            
-                Button("VDuumy") {
-                            let dummyURLString = "https://www.apple.com" // Or any other URL you want to test
-                            
-                            if let dummyURL = URL(string: dummyURLString) {
-                                // Open the URL using WKExtension on watchOS
-                                WKExtension.shared().openSystemURL(dummyURL)
-                            } else {
-                                print("Invalid dummy URL string") // Handle the unlikely case of an invalid URL string
-                            }
-                        }
-                        .font(.headline)
-                        .foregroundColor(.blue)
-
-                
             }
             .padding()
         }

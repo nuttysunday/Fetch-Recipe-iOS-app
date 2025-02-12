@@ -12,11 +12,8 @@ struct FetchRecipeWatchOS_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.light)
         }
     }
 }
 
-
-#Preview {
-    ContentView()
-}
