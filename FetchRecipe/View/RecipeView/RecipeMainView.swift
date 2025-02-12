@@ -21,6 +21,7 @@ struct RecipeMainView: View {
     @State private var searchText: String = ""
     @State private var selectedCuisines: Set<String> = []  // Multi-select cuisine filter
     @State private var isCuisineFilterPresented = false    // Controls sheet presentation
+    @State private var showShareSheet = false
     
     // Computed property to return sorted recipes
     var sortedRecipes: [Recipe] {
@@ -138,7 +139,10 @@ struct RecipeMainView: View {
                             .playing(loopMode: .loop)
                     } else {
                         RecipeListView(recipes: filteredRecipes)
-                            //.border(.red)
+                            .refreshable {
+                            try? await Task.sleep(nanoseconds: 1_000_000_000) // 1.5 seconds delay
+                            await viewModel.fetchRecipes()
+                        }
                     }
                 }
             }
@@ -151,16 +155,29 @@ struct RecipeMainView: View {
                             UIApplication.shared.open(url, options: [:], completionHandler: nil)
                         }
                     })  {
-                        Image(systemName: "star.fill") // Example icon for the button
+                        Image(systemName: "star") // Example icon for the button
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        showShareSheet = true
+                    }) {
+                        Image(systemName: "square.and.arrow.up") // Share icon
                     }
                 }
                 
                 ToolbarItem(placement: .topBarLeading) {
-                    Text("Recipes")
-                        .bold()
+                    Text("FetchRecipes")
                         .font(.title)
+                        .fontWeight(.heavy)
+                        .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.accentColor, .accentColor.opacity(0.6)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                        .shadow(color: .gray.opacity(0.4), radius: 2, x: 0, y: 2)
                 }
+
             }
+            .sheet(isPresented: $showShareSheet) {
+                        ShareSheet(items: ["Check out this awesome app!", URL(string: "https://apps.apple.com/app/id6740636646")!])
+                    }
             //.border(.red)
             .task {
                 await viewModel.fetchRecipes()
@@ -190,7 +207,7 @@ struct CuisineMultiSelectView: View {
                         Spacer()
                         if selectedCuisines.contains(cuisine) {
                             Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.blue)
+                                .foregroundColor(.accentColor)
                         } else {
                             Image(systemName: "circle")
                                 .foregroundColor(.gray)

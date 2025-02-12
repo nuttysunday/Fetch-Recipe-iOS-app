@@ -45,5 +45,6 @@ struct RecipeListView: View {
                 }
             }
             .listStyle(PlainListStyle())
+            
     }
 }

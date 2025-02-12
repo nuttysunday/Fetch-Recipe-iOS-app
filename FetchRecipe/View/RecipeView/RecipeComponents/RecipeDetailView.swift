@@ -38,6 +38,7 @@ struct RecipeDetailView: View {
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(20)
                             .bold()
+                            .foregroundColor(.accent)
                     }
                     
                     // Video Section
@@ -67,6 +68,7 @@ struct RecipeDetailView: View {
                             .cornerRadius(12)
                         }
                         
+
                         if let sourceUrl = recipe.sourceUrl {
                             Link(destination: sourceUrl) {
                                 VStack(spacing: 4) {
@@ -81,7 +83,10 @@ struct RecipeDetailView: View {
                                 .foregroundColor(.green)
                                 .cornerRadius(12)
                             }
-                            
+                        }
+
+                        
+                        if let linkToUse = recipe.sourceUrl ?? recipe.photoUrlLarge ?? URL(string: "https://example.com"){
                             Button(action: {
                                 showShareSheet = true
                             }) {
@@ -97,6 +102,7 @@ struct RecipeDetailView: View {
                                 .foregroundColor(.purple)
                                 .cornerRadius(12)
                             }
+                            
                         }
                     }
                 }
@@ -108,9 +114,9 @@ struct RecipeDetailView: View {
             AskAIModalView(recipe: recipe)
         }
         .sheet(isPresented: $showShareSheet, content: {
-            if let sourceUrl = recipe.sourceUrl {
-                ShareSheet(items: [sharingText, sourceUrl])
-            }
+                let linkToUse = recipe.sourceUrl ?? recipe.photoUrlLarge ?? URL(string: "https://example.com")!
+
+                ShareSheet(items: [sharingText, linkToUse])
         })
     }
     
