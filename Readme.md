@@ -9,8 +9,9 @@
 2. App is hosted on the **App Store**.
 3. Developed the app for **iOS**, **iPadOS**, **watchOS**, and **MacOS** platforms.
 4. Share recipe with your friends.
-5. Implemented a fuzzy serach for searching the recipe.
-6. Added Handoff between different devices present in Apple ecosystem.
+5. Added Handoff between different devices present in Apple ecosystem.
+5. Implemented a search and filter for searching the recipe.
+
 
 
 ### Future Plan:
@@ -18,3 +19,7 @@
 2. Create an internal framework for the shared codebase for different platforms.
 3. Optimize UI for each platform.
 4. Setup a Xcloud CI/CD pipeline to automatically deploy app in Test Flight after code pushed to main branch for beta testing.
+
+To setup the project
+1. Git clone
+2. Install Lottie spm

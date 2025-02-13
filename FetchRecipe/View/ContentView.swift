@@ -1,18 +1,6 @@
-//
-//  ContentView.swift
-//  FetchRecipe
-//
-//  Created by Shivam Ghodke on 2/11/25.
-//
 
+// Main entry point of the View
 
-// Unit testing
-// Caching
-// Documentation
-// Readme
-// Video
-
-// Deploy on app store
 
 import SwiftUI
 

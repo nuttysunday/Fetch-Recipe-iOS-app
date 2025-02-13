@@ -1,13 +1,6 @@
-//
-//  ViewModel.swift
-//  FetchRecipe
-//
-//  Created by Shivam Ghodke on 2/11/25.
-//
 
-// Contains the business logic
-// Responsiblity is to fetch data from the external API endpoint
-
+// Responsiblity  of this file is to fetch data from the external API endpoint
+// And populate the Recipe Model and Recipe List Model
 
 
 import Foundation

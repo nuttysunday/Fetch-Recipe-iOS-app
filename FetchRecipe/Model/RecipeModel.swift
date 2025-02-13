@@ -14,7 +14,8 @@
 
 import Foundation
 
-struct Recipe: Identifiable, Codable {
+// MARK: - Recipe Model
+struct Recipe: Identifiable, Codable, Equatable {
     let id: UUID
     let name: String
     let cuisine: String
@@ -31,8 +32,11 @@ struct Recipe: Identifiable, Codable {
         case sourceUrl = "source_url"
         case youtubeUrl = "youtube_url"
     }
+    
+    static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        lhs.id == rhs.id
+    }
 }
-
 
 struct RecipeList: Codable {
     let recipes: [Recipe]

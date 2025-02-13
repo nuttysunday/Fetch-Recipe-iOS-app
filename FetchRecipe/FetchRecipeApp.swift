@@ -1,13 +1,9 @@
-//
-//  FetchRecipeApp.swift
-//  FetchRecipe
-//
-//  Created by Shivam Ghodke on 2/11/25.
-//
+
+// Loads content View and pass necessary objct
+// Sets custom view modifier for Handoff on COntent
+// Forces light theme
 
 import SwiftUI
-
-
 
 @main
 struct FetchRecipeApp: App {
@@ -15,9 +11,9 @@ struct FetchRecipeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .handoffSession() // Custom view modifier we'll create
+                .handoffSession()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .preferredColorScheme(.light) // Forces light mode
+                .preferredColorScheme(.light)
         }
     }
 }
