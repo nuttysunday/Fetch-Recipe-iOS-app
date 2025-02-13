@@ -3,59 +3,21 @@
 //  FetchRecipe
 //
 //  Created by Shivam Ghodke on 2/11/25.
-// AIzaSyBiGXVSCGGyNUUo5f8c60Pe7UCgsqzBxME
 
 import Foundation
 
-struct GeminiRequest: Codable {
-    let contents: [Content]
-    let generationConfig: GenerationConfig
-    
-    struct Content: Codable {
-        let parts: [Text]
-        
-        struct Text: Codable {
-            let text: String
-        }
-    }
-    
-    struct GenerationConfig: Codable {
-        let temperature: Float
-        let topK: Int
-        let topP: Float
-        let maxOutputTokens: Int
-    }
-}
-
-struct GeminiResponse: Codable {
-    let candidates: [Candidate]
-    
-    struct Candidate: Codable {
-        let content: Content
-        
-        struct Content: Codable {
-            let parts: [Part]
-            
-            struct Part: Codable {
-                let text: String
-            }
-        }
-    }
-}
 
 class GeminiService {
+    
     private var apiKey: String?
     
-    private func fetchAPIKey() {
+    func generateAIResponse(userQuestion: String, recipe: Recipe) async throws -> String {
+        
         if let apiKey = Bundle.main.object(forInfoDictionaryKey: "Gemini_api_key") as? String {
             self.apiKey = apiKey
         } else {
             print("API Key not found!")
         }
-    }
-    
-    func generateAIResponse(userQuestion: String, recipe: Recipe) async throws -> String {
-        fetchAPIKey()
         
         guard let apiKey = self.apiKey else {
             throw NSError(domain: "GeminiService", code: 1, userInfo: [NSLocalizedDescriptionKey: "API key is missing."])
@@ -122,28 +84,24 @@ class GeminiService {
             .replacingOccurrences(of: "`", with: "")
             .replacingOccurrences(of: "_", with: "")
             
-        // Remove any markdown-style links
         cleaned = cleaned.replacingOccurrences(
             of: "\\[([^\\]]+)\\]\\([^)]+\\)",
             with: "$1",
             options: .regularExpression
         )
         
-        // Remove multiple newlines
         cleaned = cleaned.replacingOccurrences(
             of: "\n+",
             with: "\n",
             options: .regularExpression
         )
         
-        // Remove any remaining markdown or special formatting
         cleaned = cleaned.replacingOccurrences(
             of: "[\\[\\]\\|\\>]",
             with: "",
             options: .regularExpression
         )
         
-        // Trim extra whitespace
         cleaned = cleaned.trimmingCharacters(in: .whitespacesAndNewlines)
         
         return cleaned
