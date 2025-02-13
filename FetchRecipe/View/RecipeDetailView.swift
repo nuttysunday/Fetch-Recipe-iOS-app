@@ -47,31 +47,17 @@ struct RecipeDetailTitleView: View {
 }
 
 // COVER IMAGE
+// Updated RecipeDetailCoverView with CachedAsyncImage
 struct RecipeDetailCoverView: View {
     let recipe: Recipe
     
     var body: some View {
         if let imageUrl = recipe.photoUrlLarge {
-            VStack(alignment: .leading, spacing: 8) {
-                AsyncImage(url: imageUrl) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(12)
-                            .shadow(radius: 2)
-                    case .failure:
-                        Image(systemName: "photo.fill")
-                            .font(.system(size: 24))
-                            .foregroundColor(.gray)
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
-            }
+            CachedAsyncImageView(url: imageUrl)
+        } else {
+            Image(systemName: "photo.fill")
+                .font(.system(size: 24))
+                .foregroundColor(.gray)
         }
     }
 }

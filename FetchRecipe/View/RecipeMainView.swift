@@ -282,6 +282,7 @@ struct ErrorView: View {
 }
 
 // Recipe List View
+
 struct RecipeListView: View {
     let recipes: [Recipe]
 
@@ -290,21 +291,15 @@ struct RecipeListView: View {
             // Navigate to the Detailed View of the selected recipe
             NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                 HStack {
-                    AsyncImage(url: recipe.photoUrlSmall) { phase in
-                        if let image = phase.image {
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 80, height: 80)
-                                .cornerRadius(12)
-                                .clipped()
-                        } else if phase.error != nil {
-                            Image(systemName: "photo")
-                                .frame(width: 80, height: 80)
-                        } else {
-                            ProgressView()
-                                .frame(width: 80, height: 80)
-                        }
+                    if let imageUrl = recipe.photoUrlSmall {
+                        CachedAsyncImageView(url: imageUrl)
+                            .frame(width: 80, height: 80)
+                            .cornerRadius(12)
+                            .clipped()
+                    } else {
+                        Image(systemName: "photo")
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.gray)
                     }
 
                     VStack(alignment: .leading) {
