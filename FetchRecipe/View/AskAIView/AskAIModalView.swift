@@ -118,13 +118,11 @@ struct QuestionInputView: View {
                             .fill(Color(UIColor.secondarySystemBackground))
                     )
                 
-                Button(action: {
-                    viewModel.isLoading = true
+                Button {
                     Task {
                         await viewModel.askAI(question: viewModel.userQuestion, recipe: recipe)
                     }
-                    viewModel.isQuestionSent = true
-                }) {
+                } label: {
                     Image(systemName: "arrow.up.circle.fill")
                         .resizable()
                         .frame(width: 44, height: 44)

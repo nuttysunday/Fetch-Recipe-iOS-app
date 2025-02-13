@@ -13,7 +13,6 @@ struct RecipeMainView: View {
     @StateObject private var viewModel = RecipeListViewModel()
     @StateObject private var filterViewModel = RecipeFilterViewModel()
     @State private var isCuisineFilterPresented = false
-    @State private var showShareSheet = false
     
     var body: some View {
         NavigationView {
@@ -31,11 +30,9 @@ struct RecipeMainView: View {
                 )
             }
             .toolbar {
-                ToolbarView(showShareSheet: $showShareSheet)
+                ToolbarView()
             }
-            .sheet(isPresented: $showShareSheet) {
-                ShareSheet(items: ["Check out this awesome app!", URL(string: "https://apps.apple.com/app/id6741867800")!])
-            }
+           
             .task {
                 await viewModel.fetchRecipes()
                 filterViewModel.updateRecipes(viewModel.recipes)
@@ -55,9 +52,10 @@ struct RecipeMainView: View {
 
 // Toolbar View
 struct ToolbarView: ToolbarContent {
-    @Binding var showShareSheet: Bool
+    @State private var showShareSheet = false
     
     var body: some ToolbarContent {
+        // RATE APP
         ToolbarItem(placement: .topBarTrailing) {
             Button(action: {
                 if let url = URL(string: "https://apps.apple.com/app/id6741867800?action=write-review") {
@@ -68,12 +66,17 @@ struct ToolbarView: ToolbarContent {
             }
         }
         
+        // SHARE APP
         ToolbarItem(placement: .topBarTrailing) {
             Button(action: { showShareSheet = true }) {
                 Image(systemName: "square.and.arrow.up")
             }
+            .sheet(isPresented: $showShareSheet) {
+                ShareSheet(items: ["Check out this awesome app!", URL(string: "https://apps.apple.com/app/id6741867800")!])
+            }
         }
         
+        // APP TITLE
         ToolbarItem(placement: .topBarLeading) {
             Text("FetchRecipes")
                 .font(.title)
@@ -233,7 +236,7 @@ struct CuisineMultiSelectView: View {
 }
 
 
-// Recipe Content View
+// Display Feteched Data from the Recipe
 struct RecipeContentView: View {
     @ObservedObject var viewModel: RecipeListViewModel
     let filteredRecipes: [Recipe]
@@ -284,6 +287,7 @@ struct RecipeListView: View {
 
     var body: some View {
         List(recipes) { recipe in
+            // Navigate to the Detailed View of the selected recipe
             NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                 HStack {
                     AsyncImage(url: recipe.photoUrlSmall) { phase in

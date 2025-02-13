@@ -7,20 +7,14 @@ import SwiftUI
 
 // Main
 struct RecipeDetailView: View {
-    
     let recipe: Recipe
     
     var body: some View {
         ScrollView {
             VStack(spacing: 24) {
-                // Title Section
-                RecipeDetailTitleView(recipe: recipe)
-                
-                // Image Section
-                RecipeDetailCoverView(recipe: recipe)
-                
-                // Quick Actions
-                QuickActionList(recipe: recipe)
+                RecipeDetailTitleView(recipe: recipe) // Title Section
+                RecipeDetailCoverView(recipe: recipe) // Image Section
+                QuickActionList(recipe: recipe) // Quick Actions
             }
             .padding()
         }
@@ -31,7 +25,6 @@ struct RecipeDetailView: View {
 
 // TITLE
 struct RecipeDetailTitleView: View {
-    
     let recipe: Recipe
     
     var body: some View {
@@ -55,7 +48,6 @@ struct RecipeDetailTitleView: View {
 
 // COVER IMAGE
 struct RecipeDetailCoverView: View {
-    
     let recipe: Recipe
     
     var body: some View {
@@ -86,7 +78,6 @@ struct RecipeDetailCoverView: View {
 
 // QUICK ACTIONS LIST
 struct QuickActionList: View {
-    
     let recipe: Recipe
     @State private var showAIModal = false
     @State private var showShareSheet = false
@@ -100,18 +91,18 @@ struct QuickActionList: View {
         HStack(spacing: 16){
             Button(action: { showAIModal.toggle() }) {
                 QuickActionButton(imageName: "message.circle.fill", color: .blue, text: "Ask AI")
+            }.sheet(isPresented: $showAIModal) {
+                AskAIModalView(recipe: recipe)
             }
-            
             
             if let sourceUrl = recipe.youtubeUrl {
                 Link(destination: sourceUrl) {
-                  QuickActionButton(imageName: "video.fill", color: .red, text: "Video")
+                    QuickActionButton(imageName: "video.fill", color: .red, text: "Video")
                 }
             } else{
                 QuickActionButton(imageName: "video.fill", color: .gray, text: "Video")
             }
             
-
             if let sourceUrl = recipe.sourceUrl {
                 Link(destination: sourceUrl) {
                     QuickActionButton(imageName: "doc.text.fill", color: .green, text: "Recipe")
@@ -119,7 +110,6 @@ struct QuickActionList: View {
             } else{
                 QuickActionButton(imageName: "doc.text.fill", color: .gray, text: "Recipe")
             }
-
             
             if (recipe.sourceUrl ?? recipe.photoUrlLarge) != nil{
                 Button(action: {
@@ -127,18 +117,13 @@ struct QuickActionList: View {
                 }) {
                     QuickActionButton(imageName: "square.and.arrow.up", color: .purple, text: "Share")
                 }
+                .sheet(isPresented: $showShareSheet, content: {
+                    let linkToUse = recipe.sourceUrl ?? recipe.photoUrlLarge ?? URL(string: "https://example.com")!
+                    ShareSheet(items: [sharingText, linkToUse])
+                })
             }
-
         }
-        .sheet(isPresented: $showAIModal) {
-            AskAIModalView(recipe: recipe)
-        }
-        .sheet(isPresented: $showShareSheet, content: {
-            let linkToUse = recipe.sourceUrl ?? recipe.photoUrlLarge ?? URL(string: "https://example.com")!
-            ShareSheet(items: [sharingText, linkToUse])
-        })
     }
-    
 }
 
 
@@ -163,4 +148,3 @@ struct QuickActionButton: View {
         .cornerRadius(12)
     }
 }
-

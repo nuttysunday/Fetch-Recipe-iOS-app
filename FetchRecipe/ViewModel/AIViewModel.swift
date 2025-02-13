@@ -7,29 +7,29 @@
 
 import Foundation
 
-// MARK: - ViewModel
+
+@MainActor
 class AskAIViewModel: ObservableObject {
     @Published var userQuestion: String = ""
     @Published var aiResponse: String = ""
     @Published var isQuestionSent: Bool = false
     @Published var isLoading: Bool = false
     
+    private let geminiService = GeminiService()
+    
     func askAI(question: String, recipe: Recipe) async {
         isLoading = true
-        let geminiService = GeminiService()
+        isQuestionSent = true
+        
         do {
             let response = try await geminiService.generateAIResponse(userQuestion: question, recipe: recipe)
-            await MainActor.run {
-                aiResponse = response
-                isLoading = false
-            }
+            aiResponse = response
         } catch {
-            await MainActor.run {
-                aiResponse = "Sorry, I couldn't process your question. Please try again."
-                isLoading = false
-            }
+            aiResponse = "Sorry, I couldn't process your question. Please try again."
             print("Error fetching AI response: \(error.localizedDescription)")
         }
+        
+        isLoading = false
     }
     
     func resetState() {
