@@ -1,25 +1,57 @@
-# Fetch Recipe App (Take Home Assignment)
+# FetchRecipe App (Take Home Assignment)
 
-### Tech Stack:
+## Tech Stack:
 - **Frontend**: SwiftUI, Lottie (Graphic Animation), Adobe (Logo)
 - **Backend**: Swift, Gemini API
+- **Development**: XCode, Git, AppStoreConnect
 
-### Unique Features:
-1. Integrated **Gemini API** to provide contextual information, allowing users to query any recipe-related information.
-2. App is hosted on the **App Store**.
-3. Developed the app for **iOS**, **iPadOS**, **watchOS**, and **MacOS** platforms.
-4. Share recipe with your friends.
-5. Added Handoff between different devices present in Apple ecosystem.
-5. Implemented a search and filter for searching the recipe.
+## App Store: [https://apps.apple.com/app/id6741867800](https://apps.apple.com/app/id6741867800)
+
+## Unique Features:
+1. **Gemini API Integration**: Provides contextual information to users, enabling them to query any recipe-related information.
+2. **Multi-Platform Support**: Developed for **iOS**, **iPadOS**, **watchOS**, and **MacOS**.
+3. **Sharing Functionality**: Allows users to easily share recipes with friends.
+4. **Handoff Support**: Seamless device transitions between Apple ecosystem devices.
+5. **Search & Filter**: Efficient search and filter functionality to help users find the perfect recipe.
+
+## Future Plans:
+1. **Chat Format**: Store query data in a **chat format** for improved interaction.
+2. **Internal Framework**: Build an internal framework for shared codebases across platforms.
+3. **UI Optimization**: Tailor the UI for each platform to ensure a consistent user experience.
+4. **CI/CD Pipeline**: Set up a Xcloud CI/CD pipeline to deploy the app automatically to TestFlight after code is pushed to the main branch for beta testing.
+
+## Setup Instructions:
+1. **Clone the repository****
+   ```
+   git clone https://github.com/nuttysunday/Fetch-Recipe-iOS-app
+   ```
+2. **Install Lottie SPM:**
+    ```
+   Open your Xcode project.
+   Go to File -> Swift Packages -> Add Package Dependency.
+   Enter the Lottie GitHub repository URL:  https://github.com/airbnb/lottie-spm
+   ```
+
+## iOS Snipets
+<div style="display: flex; justify-content: space-around;">
+  <img src="ReadmeImages/search.gif" alt="Search and Filter" width="30%" style="margin-right: 10px;" />
+  <img src="ReadmeImages/detail.gif" alt="Recipe Detail View" width="30%" style="margin-right: 10px;" />
+  <img src="ReadmeImages/ai.gif" alt="Recipe AI View" width="30%" />
+</div>
+
+## iPad Screenshots
+<div style="display: flex; justify-content: space-around;">
+  <img src="ReadmeImages/iPad/5.png" alt="Search and Filter" width="30%" style="margin-right: 10px;" />
+  <img src="ReadmeImages/iPad/6.png" " alt="Recipe Detail View" width="30%" style="margin-right: 10px;" />
+  <img src="ReadmeImages/iPad/3.png"  alt="Recipe AI View" width="30%" />
+</div>
 
 
+## watchOS Screenshots (Very Basic)
+<div style="display: flex; justify-content: space-around;">
+  <img src="ReadmeImages/watchOS/1.png" alt="Search and Filter" width="30%" style="margin-right: 10px;" />
+  <img src="ReadmeImages/watchOS/2.png" " alt="Recipe Detail View" width="30%" style="margin-right: 10px;" />
+  <img src="ReadmeImages/watchOS/3.png"  alt="Recipe AI View" width="30%" />
+</div>
 
-### Future Plan:
-1. Store the query data in a **chat format**.
-2. Create an internal framework for the shared codebase for different platforms.
-3. Optimize UI for each platform.
-4. Setup a Xcloud CI/CD pipeline to automatically deploy app in Test Flight after code pushed to main branch for beta testing.
-
-To setup the project
-1. Git clone
-2. Install Lottie spm
+## MacOS Screenshots
