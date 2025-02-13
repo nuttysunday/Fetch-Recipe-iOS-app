@@ -59,11 +59,31 @@ struct RecipeMainView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack (spacing: 15){
                 
-                VStack {
+                VStack{
+                    
+                    // Search Bar
+                    TextField("Search recipes...", text: $searchText)
+                        .padding(10)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                        .overlay(
+                            HStack {
+                                Spacer()
+                                if !searchText.isEmpty {
+                                    Button(action: { searchText = "" }) {
+                                        Image(systemName: "xmark.circle.fill")
+                                            .foregroundColor(.gray)
+                                    }
+                                    .padding(.trailing, 8)
+                                }
+                            }
+                        )
+                    
                     // Search Bar, Sort, and Cuisine Filter in Horizontal Stack
                     HStack(spacing: 10) {
+                        
                         // Dropdown Menu for Sorting
                         Menu {
                             ForEach(RecipeSortOption.allCases, id: \.self) { option in
@@ -98,25 +118,9 @@ struct RecipeMainView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: 50)
 
-                    // Search Bar
-                    TextField("Search recipes...", text: $searchText)
-                        .padding(10)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(8)
-                        .overlay(
-                            HStack {
-                                Spacer()
-                                if !searchText.isEmpty {
-                                    Button(action: { searchText = "" }) {
-                                        Image(systemName: "xmark.circle.fill")
-                                            .foregroundColor(.gray)
-                                    }
-                                    .padding(.trailing, 8)
-                                }
-                            }
-                        )
                 }
                 .padding(.horizontal)
+                .padding(.top)
                 
                 Group {
                     if viewModel.isLoading {
@@ -140,7 +144,6 @@ struct RecipeMainView: View {
                     } else {
                         RecipeListView(recipes: filteredRecipes)
                             .refreshable {
-                            try? await Task.sleep(nanoseconds: 1_000_000_000) // 1.5 seconds delay
                             await viewModel.fetchRecipes()
                         }
                     }
