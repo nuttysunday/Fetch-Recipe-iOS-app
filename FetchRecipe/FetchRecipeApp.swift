@@ -7,12 +7,10 @@ import SwiftUI
 
 @main
 struct FetchRecipeApp: App {
-    let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .handoffSession()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .preferredColorScheme(.light)
         }
     }
