@@ -42,9 +42,18 @@
 </div>
 
 ### MacOS Screenshots
-
+<div style="display: flex; justify-content: space-around;">
+  <img src="ReadmeImages/MacOS/1.png" alt="Search and Filter" width="30%" style="margin-right: 10px;" />
+  <img src="ReadmeImages/MacOS/2.png" " alt="Recipe Detail View" width="30%" style="margin-right: 10px;" />
+  <img src="ReadmeImages/MacOS/3.png"  alt="Recipe AI View" width="30%" />
+</div>
 
 ### Handoff Screenshot
+<div style="display: flex; justify-content: space-around;">
+  <img src="ReadmeImages/Handoff/1.png" alt="Search and Filter" width="30%" style="margin-right: 10px;" />
+  <img src="ReadmeImages/Handoff/2.png" " alt="Recipe Detail View" width="30%" style="margin-right: 10px;" />
+</div>
+
 
 
 
