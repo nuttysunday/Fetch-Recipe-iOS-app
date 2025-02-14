@@ -9,15 +9,20 @@
 
 ### App Store: [https://apps.apple.com/app/id6741867800](https://apps.apple.com/app/id6741867800)
 
+### App Video: https://youtu.be/NXT0ko7BBfY
+
+[![Watch the video](https://img.youtube.com/vi/NXT0ko7BBfY/0.jpg)](https://youtu.be/NXT0ko7BBfY)
+
+
 ### iOS Snippets
 
-- **Search and Filter**
+#### 1. Search and Filter
 ![Search and Filter](ReadmeImages/search.gif)
 
-- **Recipe Detail View**
+#### 2. Recipe Detail View
 ![Recipe Detail View](ReadmeImages/detail.gif)
 
-- **Recipe AI View**
+#### 3. Recipe AI View
 ![Recipe AI View](ReadmeImages/ai.gif)
 
 
