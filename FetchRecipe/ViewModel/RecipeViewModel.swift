@@ -13,7 +13,7 @@ class RecipeListViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
     
     
-    func fetchRecipes(from urlString: String = "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json") async {
+    func fetchRecipes(from urlString: String = "https://shivam.foo/api/recipes.json") async {
         isLoading = true
         errorMessage = nil
         
